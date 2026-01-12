@@ -2,13 +2,19 @@
 #include <string>
 
 int getStudentID();
-int getStudentGPA();
-string getStudentName();
-
+float getStudentGPA();
+std::string getStudentName();
+void displayOutput(int, float, std::string);
 int main() {
-	getStudentID();
-	getStudentGPA();
-	getStudentName();
+	int studentID;
+	float studentGPA;
+	std::string studentName;
+
+	studentID =	getStudentID();
+	studentGPA = getStudentGPA();
+	studentName = getStudentName();
+
+	displayOutput(studentID, studentGPA, studentName);
 }
 
 
@@ -19,16 +25,20 @@ int getStudentID() {
 	return studentID;
 }
 
-int getStudentGPA() {
-	int studentGPA = 0;
+float getStudentGPA() {
+	float studentGPA = 0.0;
 	std::cout << "Enter Student GPA\n";
 	std::cin >> studentGPA;
 	return studentGPA;
 }
 
-string getStudentName() {
-	string studentName;
+std::string getStudentName() {
+	std::string studentName;
 	std::cout << "Enter student name: \n";
 	std::cin >> studentName;
 	return studentName;
+}
+
+void displayOutput(int ID, float GPA, std::string Name) {
+	std::cout << "Student ID: " << ID << "\nStudent GPA: " << GPA << "\nStudent Name: " << Name << std::endl;
 }
