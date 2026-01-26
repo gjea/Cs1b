@@ -1,3 +1,18 @@
+// Attached: HW 2(b)
+// File: HW_2b.pdf
+//
+//
+// Programmer: Gage Alvarez
+// Class: CS 1B
+// Instructor: Med Mogasemi
+//
+//
+// Program: Find ID in array
+//
+// Description:
+// The program searches an array for an inputted ID, and reports whether or not
+// the inputted number is within the array.
+
 #include <iostream>
 
 int main() {
