@@ -15,6 +15,8 @@
 // then displayed for each student and each subject.
 //
 #include <fstream>
+#include <iomanip>
+#include <iostream>
 
 const int g_STUDENTS = 5;
 const int g_CLASSES = 3;
