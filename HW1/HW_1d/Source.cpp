@@ -22,9 +22,9 @@ void displayVolume(float &width, float &length, float &depth, float volume);
 
 int main() {
     // declare variables
-    float width;
-    float length;
-    float depth;
+    float width = 0;
+    float length= 0;
+    float depth = 0;
     // function to get dimensions of the rectangle
     getDimensions(width, length, depth);
     // function to check validity of the sides
@@ -45,6 +45,7 @@ int main() {
 // input: values for width, length,, and depth
 // output: width, length, depth
 void getDimensions(float &width, float &length, float &depth) {
+    //Prompt for sides, and fill variables with input
     std::cout << "Enter width: " << '\n';
     std::cin >> width;
     std::cout << "Enter length: " << '\n';
@@ -103,3 +104,4 @@ void displayVolume(float &width, float &length, float &depth, float volume) {
     std::cout << "length: " << length << '\n';
     std::cout << "depth: " << depth << '\n';
 }
+//PROGRAM OUTPUT
