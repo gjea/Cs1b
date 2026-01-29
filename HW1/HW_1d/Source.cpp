@@ -23,7 +23,7 @@ void displayVolume(float &width, float &length, float &depth, float volume);
 int main() {
     // declare variables
     float width = 0;
-    float length= 0;
+    float length = 0;
     float depth = 0;
     // function to get dimensions of the rectangle
     getDimensions(width, length, depth);
@@ -45,14 +45,14 @@ int main() {
 // input: values for width, length,, and depth
 // output: width, length, depth
 void getDimensions(float &width, float &length, float &depth) {
-    //Prompt for sides, and fill variables with input
+    // Prompt for sides, and fill variables with input
     std::cout << "Enter width: " << '\n';
     std::cin >> width;
     std::cout << "Enter length: " << '\n';
     std::cin >> length;
     std::cout << "Enter depth: " << '\n';
     std::cin >> depth;
-}
+} // end of getDimensions
 
 // areValid
 // function checks that all sides are valid
@@ -78,7 +78,7 @@ bool areValid(float &width, float &length, float &depth) {
     } else {
         return false;
     }
-}
+} // end of areValid
 
 // calcVolume
 // fucntion calculates the total volume based on width length and depth
@@ -88,7 +88,7 @@ bool areValid(float &width, float &length, float &depth) {
 // output: volume
 float calcVolume(float &width, float &length, float &depth) {
     return width * length * depth;
-}
+} // end of calcVolume
 
 // displayVolume
 // function displays all relevant values including volume, width, length, and
@@ -103,5 +103,17 @@ void displayVolume(float &width, float &length, float &depth, float volume) {
     std::cout << "width: " << width << '\n';
     std::cout << "length: " << length << '\n';
     std::cout << "depth: " << depth << '\n';
-}
-//PROGRAM OUTPUT
+} // end of displayVolume
+
+// PROGRAM OUTPUT
+// Enter width:
+// 15
+// Enter length:
+// 87
+// Enter depth:
+// 5
+// The volume is 6525
+// DIMENSIONS:
+// width: 15
+// length: 87
+// depth: 5

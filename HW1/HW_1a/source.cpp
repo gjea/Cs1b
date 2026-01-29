@@ -63,7 +63,7 @@ float getSalesAmount() {
     std::cout << "Enter sales amount " << '\n';
     std::cin >> salesAmount;
     return salesAmount;
-}
+} // end of getSalesAmount
 
 // calcCommission
 // This function calculates the commission based on the sales amount
@@ -82,7 +82,8 @@ float calcCommission(float salesAmount) {
         commissionRate = 0;
     }
     return salesAmount * commissionRate;
-}
+} // end of calcCommission
+
 // calcPay
 // This function calculates the total pay based on monthly pay and commission
 // returns totalPay to main
@@ -93,7 +94,7 @@ float calcCommission(float salesAmount) {
 float calcPay(float commission) {
     const int PAY = 2500;
     return PAY + commission;
-}
+} // end of calcPay
 
 // displayPay
 // function displays all important values
@@ -106,4 +107,22 @@ void displayPay(float salesAmount, float commission, float totalPay) {
     std::cout << "Commission: " << commission << '\n';
     std::cout << "Base Pay: " << totalPay - commission << '\n';
     std::cout << "Total Pay: " << totalPay << '\n';
-}
+} // end of displayPay
+
+// Output:
+// Enter sales amount
+// 9000
+// Monthly Sales: 9000
+// Commission: 0
+// Base Pay: 2500
+// Total Pay: 2500
+// loop? (y/*)
+// y
+// Enter sales amount
+// 98734
+// Monthly Sales: 98734
+// Commission: 19746.8
+// Base Pay: 2500
+// Total Pay: 22246.8
+// loop? (y/*)
+// n

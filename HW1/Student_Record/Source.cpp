@@ -47,7 +47,7 @@ void getRecord(int &ID, std::string &name, float &GPA) {
     std::cin >> name;
     std::cout << "GPA: " << '\n';
     std::cin >> GPA;
-}
+} // end of getRecord
 
 // displayRecord
 // function displays student record
@@ -56,9 +56,25 @@ void getRecord(int &ID, std::string &name, float &GPA) {
 //
 //  output: displays variables to console
 //
+
 void displayRecord(const int ID, const std::string name, const float GPA) {
     std::cout << "STUDENT RECORD" << "\n\n";
     std::cout << "ID: " << ID << '\n';
     std::cout << "NAME: " << name << '\n';
     std::cout << "GPA: " << GPA << '\n';
-}
+} // end of displayRecord
+
+// Output:
+//
+// Enter a student Record:
+// ID:
+// 65
+// NAME:
+// studentguy
+// GPA:
+// 900
+// STUDENT RECORD
+//
+// ID: 65
+// NAME: studentguy
+// GPA: 900
