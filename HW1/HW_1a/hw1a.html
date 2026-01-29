@@ -1,0 +1,165 @@
+<!-- vim: set nomodeline: -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>/home/jira/Documents/code/repos/Cs1b/HW1/HW_1a/source.cpp</title>
+<meta name="colorscheme" content="eldritch"></meta>
+<style>
+* {font-family: monospace}
+body {background-color: #000000; color: #ebfafa}
+.-operator {color: #04d1f9}
+.-punctuation-delimiter {color: #04d1f9}
+.-string-escape {color: #a48cf2}
+.Function {color: #f265b5}
+.PreProc {color: #10a1bd}
+.-spell {}
+.-punctuation-bracket {color: #abb4da}
+.Comment {color: #6a9955}
+.-variable {color: #04d1f9}
+.Statement {color: #a48cf2}
+.-type-builtin {color: #0aaed2}
+.Type {color: #04d1f9}
+.Constant {color: #f16c75}
+.-ibl-whitespace-char-1 {color: #3b4261}
+.Character {color: #f7c67f}
+.-ibl-indent-char-1 {color: #3b4261}
+.-keyword {color: #37f499}
+.-variable-parameter {color: #a48cf2}
+.String {color: #f1fc79}
+</style>
+</head>
+<body style="display: flex">
+<pre>
+<span class="Comment"><span class="-spell">// Attached: HW 1(a-e)</span></span>
+<span class="Comment"><span class="-spell">// File: HW_1a.pdf</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">// Programmer: Gage Alvarez</span></span>
+<span class="Comment"><span class="-spell">// Class: CS 1B</span></span>
+<span class="Comment"><span class="-spell">// Instructor: Med Mogasemi</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">// Program: Calculate Total Pay</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">// Description:</span></span>
+<span class="Comment"><span class="-spell">// Program Calculates the total pay from the monthly sales amount and the</span></span>
+<span class="Comment"><span class="-spell">// commission based on the sales amount.</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="PreProc">#include</span> <span class="String">&lt;iostream&gt;</span>
+<span class="PreProc">#include</span> <span class="String">&lt;string&gt;</span>
+<span class="Comment"><span class="-spell">// Function Prototypes</span></span>
+<span class="-type-builtin">float</span> <span class="-variable"><span class="Function">getSalesAmount</span></span><span class="-punctuation-bracket">(</span><span class="-punctuation-bracket">)</span><span class="-punctuation-delimiter">;</span>
+<span class="-type-builtin">float</span> <span class="-variable"><span class="Function">calcCommission</span></span><span class="-punctuation-bracket">(</span><span class="-type-builtin">float</span><span class="-punctuation-bracket">)</span><span class="-punctuation-delimiter">;</span>
+<span class="-type-builtin">float</span> <span class="-variable"><span class="Function">calcPay</span></span><span class="-punctuation-bracket">(</span><span class="-type-builtin">float</span><span class="-punctuation-bracket">)</span><span class="-punctuation-delimiter">;</span>
+<span class="-type-builtin">void</span> <span class="-variable"><span class="Function">displayPay</span></span><span class="-punctuation-bracket">(</span><span class="-type-builtin">float</span><span class="-punctuation-delimiter">,</span> <span class="-type-builtin">float</span><span class="-punctuation-delimiter">,</span> <span class="-type-builtin">float</span><span class="-punctuation-bracket">)</span><span class="-punctuation-delimiter">;</span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">// main</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="-type-builtin">int</span> <span class="-variable"><span class="Function">main</span></span><span class="-punctuation-bracket">(</span><span class="-punctuation-bracket">)</span> <span class="-punctuation-bracket">{</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="Type">string</span> <span class="-variable">loop</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="Statement">do</span> <span class="-punctuation-bracket">{</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="Comment"><span class="-spell">// Declaring Variables</span></span>
+<span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-variable">loop</span> <span class="-operator">=</span> <span class="String">&quot;&quot;</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-type-builtin">float</span> <span class="-variable">salesAmount</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-type-builtin">float</span> <span class="-variable">commission</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-type-builtin">float</span> <span class="-variable">totalPay</span><span class="-punctuation-delimiter">;</span>
+
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="Comment"><span class="-spell">// Function to get the sales amount</span></span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-variable">salesAmount</span> <span class="-operator">=</span> <span class="-variable"><span class="Function">getSalesAmount</span></span><span class="-punctuation-bracket">(</span><span class="-punctuation-bracket">)</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-indent-char-1">▎</span>
+<span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="Comment"><span class="-spell">// function used to calculate the commission based on the sales amount</span></span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-variable">commission</span> <span class="-operator">=</span> <span class="-variable"><span class="Function">calcCommission</span></span><span class="-punctuation-bracket">(</span><span class="-variable">salesAmount</span><span class="-punctuation-bracket">)</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="Comment"><span class="-spell">// function used to determine the total pay based on sales amount and</span></span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="Comment"><span class="-spell">// commission</span></span>
+<span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-variable">totalPay</span> <span class="-operator">=</span> <span class="-variable"><span class="Function">calcPay</span></span><span class="-punctuation-bracket">(</span><span class="-variable">commission</span><span class="-punctuation-bracket">)</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="Comment"><span class="-spell">// function used to display the total pay</span></span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-variable"><span class="Function">displayPay</span></span><span class="-punctuation-bracket">(</span><span class="-variable">salesAmount</span><span class="-punctuation-delimiter">,</span> <span class="-variable">commission</span><span class="-punctuation-delimiter">,</span> <span class="-variable">totalPay</span><span class="-punctuation-bracket">)</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-indent-char-1">▎</span>
+<span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cout</span> <span class="-operator">&lt;&lt;</span> <span class="String">&quot;loop? (y/*)&quot;</span> <span class="-operator">&lt;&lt;</span> <span class="Character">'<span class="-string-escape">\n</span>'</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cin</span> <span class="-operator">&gt;&gt;</span> <span class="-variable">loop</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-indent-char-1">▎</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-punctuation-bracket">}</span> <span class="Statement">while</span> <span class="-punctuation-bracket">(</span><span class="-variable">loop</span><span class="-punctuation-bracket">[</span><span class="Constant">0</span><span class="-punctuation-bracket">]</span> <span class="-operator">==</span> <span class="Character">'y'</span><span class="-punctuation-bracket">)</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-keyword">return</span> <span class="Constant">0</span><span class="-punctuation-delimiter">;</span>
+<span class="-punctuation-bracket">}</span> <span class="Comment"><span class="-spell">// end of main</span></span>
+
+<span class="Comment"><span class="-spell">// getSalesAmount</span></span>
+<span class="Comment"><span class="-spell">// This fucntion prompts the user to enter the monthly sales amount</span></span>
+<span class="Comment"><span class="-spell">// returns salesAmount to main</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">// Input: monthly sales amount inputted by user</span></span>
+<span class="Comment"><span class="-spell">// Output: salesAmount returned to main</span></span>
+
+<span class="-type-builtin">float</span> <span class="-variable"><span class="Function">getSalesAmount</span></span><span class="-punctuation-bracket">(</span><span class="-punctuation-bracket">)</span> <span class="-punctuation-bracket">{</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-type-builtin">float</span> <span class="-variable">salesAmount</span> <span class="-operator">=</span> <span class="Constant">0</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cout</span> <span class="-operator">&lt;&lt;</span> <span class="String">&quot;Enter sales amount &quot;</span> <span class="-operator">&lt;&lt;</span> <span class="Character">'<span class="-string-escape">\n</span>'</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cin</span> <span class="-operator">&gt;&gt;</span> <span class="-variable">salesAmount</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-keyword">return</span> <span class="-variable">salesAmount</span><span class="-punctuation-delimiter">;</span>
+<span class="-punctuation-bracket">}</span> <span class="Comment"><span class="-spell">// end of getSalesAmount</span></span>
+
+<span class="Comment"><span class="-spell">// calcCommission</span></span>
+<span class="Comment"><span class="-spell">// This function calculates the commission based on the sales amount</span></span>
+<span class="Comment"><span class="-spell">// returns the total commission amount to main</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">// Input: Sales amount</span></span>
+<span class="Comment"><span class="-spell">// Output: commission</span></span>
+
+<span class="-type-builtin">float</span> <span class="-variable"><span class="Function">calcCommission</span></span><span class="-punctuation-bracket">(</span><span class="-type-builtin">float</span> <span class="-variable"><span class="-variable-parameter">salesAmount</span></span><span class="-punctuation-bracket">)</span> <span class="-punctuation-bracket">{</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-type-builtin">float</span> <span class="-variable">commissionRate</span> <span class="-operator">=</span> <span class="Constant">0</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="Statement">if</span> <span class="-punctuation-bracket">(</span><span class="-variable">salesAmount</span> <span class="-operator">&gt;</span> <span class="Constant">50000</span><span class="-punctuation-bracket">)</span> <span class="-punctuation-bracket">{</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-variable">commissionRate</span> <span class="-operator">=</span> <span class="Constant">0.2</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-punctuation-bracket">}</span> <span class="Statement">else</span> <span class="Statement">if</span> <span class="-punctuation-bracket">(</span><span class="-variable">salesAmount</span> <span class="-operator">&gt;</span> <span class="Constant">25000</span><span class="-punctuation-bracket">)</span> <span class="-punctuation-bracket">{</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-variable">commissionRate</span> <span class="-operator">=</span> <span class="Constant">0.15</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-punctuation-bracket">}</span> <span class="Statement">else</span> <span class="-punctuation-bracket">{</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-variable">commissionRate</span> <span class="-operator">=</span> <span class="Constant">0</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-punctuation-bracket">}</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-keyword">return</span> <span class="-variable">salesAmount</span> <span class="-operator">*</span> <span class="-variable">commissionRate</span><span class="-punctuation-delimiter">;</span>
+<span class="-punctuation-bracket">}</span> <span class="Comment"><span class="-spell">// end of calcCommission</span></span>
+
+<span class="Comment"><span class="-spell">// calcPay</span></span>
+<span class="Comment"><span class="-spell">// This function calculates the total pay based on monthly pay and commission</span></span>
+<span class="Comment"><span class="-spell">// returns totalPay to main</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">// Input: monthly pay and commission</span></span>
+<span class="Comment"><span class="-spell">// Output: total pay</span></span>
+
+<span class="-type-builtin">float</span> <span class="-variable"><span class="Function">calcPay</span></span><span class="-punctuation-bracket">(</span><span class="-type-builtin">float</span> <span class="-variable"><span class="-variable-parameter">commission</span></span><span class="-punctuation-bracket">)</span> <span class="-punctuation-bracket">{</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-keyword">const</span> <span class="-type-builtin">int</span> <span class="-variable"><span class="Constant">PAY</span></span> <span class="-operator">=</span> <span class="Constant">2500</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-keyword">return</span> <span class="-variable"><span class="Constant">PAY</span></span> <span class="-operator">+</span> <span class="-variable">commission</span><span class="-punctuation-delimiter">;</span>
+<span class="-punctuation-bracket">}</span> <span class="Comment"><span class="-spell">// end of calcPay</span></span>
+
+<span class="Comment"><span class="-spell">// displayPay</span></span>
+<span class="Comment"><span class="-spell">// function displays all important values</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">// Input: salesAmount, Commission, totalPay</span></span>
+<span class="Comment"><span class="-spell">// Output: prints all values to console</span></span>
+
+<span class="-type-builtin">void</span> <span class="-variable"><span class="Function">displayPay</span></span><span class="-punctuation-bracket">(</span><span class="-type-builtin">float</span> <span class="-variable"><span class="-variable-parameter">salesAmount</span></span><span class="-punctuation-delimiter">,</span> <span class="-type-builtin">float</span> <span class="-variable"><span class="-variable-parameter">commission</span></span><span class="-punctuation-delimiter">,</span> <span class="-type-builtin">float</span> <span class="-variable"><span class="-variable-parameter">totalPay</span></span><span class="-punctuation-bracket">)</span> <span class="-punctuation-bracket">{</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cout</span> <span class="-operator">&lt;&lt;</span> <span class="String">&quot;Monthly Sales: &quot;</span> <span class="-operator">&lt;&lt;</span> <span class="-variable">salesAmount</span> <span class="-operator">&lt;&lt;</span> <span class="Character">'<span class="-string-escape">\n</span>'</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cout</span> <span class="-operator">&lt;&lt;</span> <span class="String">&quot;Commission: &quot;</span> <span class="-operator">&lt;&lt;</span> <span class="-variable">commission</span> <span class="-operator">&lt;&lt;</span> <span class="Character">'<span class="-string-escape">\n</span>'</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cout</span> <span class="-operator">&lt;&lt;</span> <span class="String">&quot;Base Pay: &quot;</span> <span class="-operator">&lt;&lt;</span> <span class="-variable">totalPay</span> <span class="-operator">-</span> <span class="-variable">commission</span> <span class="-operator">&lt;&lt;</span> <span class="Character">'<span class="-string-escape">\n</span>'</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cout</span> <span class="-operator">&lt;&lt;</span> <span class="String">&quot;Total Pay: &quot;</span> <span class="-operator">&lt;&lt;</span> <span class="-variable">totalPay</span> <span class="-operator">&lt;&lt;</span> <span class="Character">'<span class="-string-escape">\n</span>'</span><span class="-punctuation-delimiter">;</span>
+<span class="-punctuation-bracket">}</span> <span class="Comment"><span class="-spell">// end of displayPay</span></span>
+
+<span class="Comment"><span class="-spell">// Output:</span></span>
+<span class="Comment"><span class="-spell">// Enter sales amount</span></span>
+<span class="Comment"><span class="-spell">// 9000</span></span>
+<span class="Comment"><span class="-spell">// Monthly Sales: 9000</span></span>
+<span class="Comment"><span class="-spell">// Commission: 0</span></span>
+<span class="Comment"><span class="-spell">// Base Pay: 2500</span></span>
+<span class="Comment"><span class="-spell">// Total Pay: 2500</span></span>
+<span class="Comment"><span class="-spell">// loop? (y/*)</span></span>
+<span class="Comment"><span class="-spell">// y</span></span>
+<span class="Comment"><span class="-spell">// Enter sales amount</span></span>
+<span class="Comment"><span class="-spell">// 98734</span></span>
+<span class="Comment"><span class="-spell">// Monthly Sales: 98734</span></span>
+<span class="Comment"><span class="-spell">// Commission: 19746.8</span></span>
+<span class="Comment"><span class="-spell">// Base Pay: 2500</span></span>
+<span class="Comment"><span class="-spell">// Total Pay: 22246.8</span></span>
+<span class="Comment"><span class="-spell">// loop? (y/*)</span></span>
+<span class="Comment"><span class="-spell">// n</span></span>
+
+</pre>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!-- vim: set nomodeline: -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>/home/jira/Documents/code/repos/Cs1b/HW1/Student_Record/Source.cpp</title>
+<meta name="colorscheme" content="eldritch"></meta>
+<style>
+* {font-family: monospace}
+body {background-color: #000000; color: #ebfafa}
+.-operator {color: #04d1f9}
+.-string-escape {color: #a48cf2}
+.Function {color: #f265b5}
+.PreProc {color: #10a1bd}
+.-punctuation-bracket {color: #abb4da}
+.-ibl-indent-char-1 {color: #3b4261}
+.-spell {}
+.Comment {color: #6a9955}
+.-variable {color: #04d1f9}
+.-type-builtin {color: #0aaed2}
+.Type {color: #04d1f9}
+.Constant {color: #f16c75}
+.-ibl-whitespace-char-1 {color: #3b4261}
+.Character {color: #f7c67f}
+.String {color: #f1fc79}
+.-keyword {color: #37f499}
+.-punctuation-delimiter {color: #04d1f9}
+.-variable-parameter {color: #a48cf2}
+</style>
+</head>
+<body style="display: flex">
+<pre>
+<span class="Comment"><span class="-spell">// Attached: HW 1(a-e)</span></span>
+<span class="Comment"><span class="-spell">// File: HW_1a.pdf</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">// Programmer: Gage Alvarez</span></span>
+<span class="Comment"><span class="-spell">// Class: CS 1B</span></span>
+<span class="Comment"><span class="-spell">// Instructor: Med Mogasemi</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">// Program: Create student Record</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">// Description:</span></span>
+<span class="Comment"><span class="-spell">// Program displays student record inputted by user</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">// function prototypes</span></span>
+<span class="Comment"><span class="-spell">// void getRecord(int &amp;ID, std::string &amp;name, float &amp;GPA);</span></span>
+<span class="Comment"><span class="-spell">// void displayRecord(const int ID, const std::string name, const float GPA);</span></span>
+<span class="PreProc">#include</span> <span class="String">&quot;prototypes.h&quot;</span>
+
+<span class="PreProc">#include</span> <span class="String">&lt;iostream&gt;</span>
+<span class="PreProc">#include</span> <span class="String">&lt;string&gt;</span>
+
+<span class="-type-builtin">int</span> <span class="-variable"><span class="Function">main</span></span><span class="-punctuation-bracket">(</span><span class="-punctuation-bracket">)</span> <span class="-punctuation-bracket">{</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="Comment"><span class="-spell">// Declaring variables</span></span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-type-builtin">int</span> <span class="-variable"><span class="Constant">ID</span></span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="Type">string</span> <span class="-variable">name</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-type-builtin">float</span> <span class="-variable"><span class="Constant">GPA</span></span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="Comment"><span class="-spell">// function used to get the record for the student</span></span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-variable"><span class="Function">getRecord</span></span><span class="-punctuation-bracket">(</span><span class="-variable"><span class="Constant">ID</span></span><span class="-punctuation-delimiter">,</span> <span class="-variable">name</span><span class="-punctuation-delimiter">,</span> <span class="-variable"><span class="Constant">GPA</span></span><span class="-punctuation-bracket">)</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="Comment"><span class="-spell">// function used to display the student record</span></span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-variable"><span class="Function">displayRecord</span></span><span class="-punctuation-bracket">(</span><span class="-variable"><span class="Constant">ID</span></span><span class="-punctuation-delimiter">,</span> <span class="-variable">name</span><span class="-punctuation-delimiter">,</span> <span class="-variable"><span class="Constant">GPA</span></span><span class="-punctuation-bracket">)</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-keyword">return</span> <span class="Constant">0</span><span class="-punctuation-delimiter">;</span>
+<span class="-punctuation-bracket">}</span> <span class="Comment"><span class="-spell">// end of main</span></span>
+
+<span class="Comment"><span class="-spell">// getRecord</span></span>
+<span class="Comment"><span class="-spell">// This fucntion sets variabels from user input</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">// input: id,name, GPA</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">// output: updated id, name , GPA</span></span>
+<span class="-type-builtin">void</span> <span class="-variable"><span class="Function">getRecord</span></span><span class="-punctuation-bracket">(</span><span class="-type-builtin">int</span> <span class="-variable-parameter"><span class="-operator">&amp;</span><span class="-variable"><span class="Constant">ID</span></span></span><span class="-punctuation-delimiter">,</span> <span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="Type">string</span> <span class="-variable-parameter"><span class="-operator">&amp;</span><span class="-variable">name</span></span><span class="-punctuation-delimiter">,</span> <span class="-type-builtin">float</span> <span class="-variable-parameter"><span class="-operator">&amp;</span><span class="-variable"><span class="Constant">GPA</span></span></span><span class="-punctuation-bracket">)</span> <span class="-punctuation-bracket">{</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cout</span> <span class="-operator">&lt;&lt;</span> <span class="String">&quot;Enter a student Record: &quot;</span> <span class="-operator">&lt;&lt;</span> <span class="Character">'<span class="-string-escape">\n</span>'</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cout</span> <span class="-operator">&lt;&lt;</span> <span class="String">&quot;ID: &quot;</span> <span class="-operator">&lt;&lt;</span> <span class="Character">'<span class="-string-escape">\n</span>'</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cin</span> <span class="-operator">&gt;&gt;</span> <span class="-variable"><span class="Constant">ID</span></span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cout</span> <span class="-operator">&lt;&lt;</span> <span class="String">&quot;NAME: &quot;</span> <span class="-operator">&lt;&lt;</span> <span class="Character">'<span class="-string-escape">\n</span>'</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cin</span> <span class="-operator">&gt;&gt;</span> <span class="-variable">name</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cout</span> <span class="-operator">&lt;&lt;</span> <span class="String">&quot;GPA: &quot;</span> <span class="-operator">&lt;&lt;</span> <span class="Character">'<span class="-string-escape">\n</span>'</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cin</span> <span class="-operator">&gt;&gt;</span> <span class="-variable"><span class="Constant">GPA</span></span><span class="-punctuation-delimiter">;</span>
+<span class="-punctuation-bracket">}</span> <span class="Comment"><span class="-spell">// end of getRecord</span></span>
+
+<span class="Comment"><span class="-spell">// displayRecord</span></span>
+<span class="Comment"><span class="-spell">// function displays student record</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">// input: id, name, gpa</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">//  output: displays variables to console</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+
+<span class="-type-builtin">void</span> <span class="-variable"><span class="Function">displayRecord</span></span><span class="-punctuation-bracket">(</span><span class="-keyword">const</span> <span class="-type-builtin">int</span> <span class="-variable"><span class="Constant"><span class="-variable-parameter">ID</span></span></span><span class="-punctuation-delimiter">,</span> <span class="-keyword">const</span> <span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="Type">string</span> <span class="-variable"><span class="-variable-parameter">name</span></span><span class="-punctuation-delimiter">,</span> <span class="-keyword">const</span> <span class="-type-builtin">float</span> <span class="-variable"><span class="Constant"><span class="-variable-parameter">GPA</span></span></span><span class="-punctuation-bracket">)</span> <span class="-punctuation-bracket">{</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cout</span> <span class="-operator">&lt;&lt;</span> <span class="String">&quot;STUDENT RECORD&quot;</span> <span class="-operator">&lt;&lt;</span> <span class="String">&quot;<span class="-string-escape">\n</span><span class="-string-escape">\n</span>&quot;</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cout</span> <span class="-operator">&lt;&lt;</span> <span class="String">&quot;ID: &quot;</span> <span class="-operator">&lt;&lt;</span> <span class="-variable"><span class="Constant">ID</span></span> <span class="-operator">&lt;&lt;</span> <span class="Character">'<span class="-string-escape">\n</span>'</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cout</span> <span class="-operator">&lt;&lt;</span> <span class="String">&quot;NAME: &quot;</span> <span class="-operator">&lt;&lt;</span> <span class="-variable">name</span> <span class="-operator">&lt;&lt;</span> <span class="Character">'<span class="-string-escape">\n</span>'</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cout</span> <span class="-operator">&lt;&lt;</span> <span class="String">&quot;GPA: &quot;</span> <span class="-operator">&lt;&lt;</span> <span class="-variable"><span class="Constant">GPA</span></span> <span class="-operator">&lt;&lt;</span> <span class="Character">'<span class="-string-escape">\n</span>'</span><span class="-punctuation-delimiter">;</span>
+<span class="-punctuation-bracket">}</span> <span class="Comment"><span class="-spell">// end of displayRecord</span></span>
+
+<span class="Comment"><span class="-spell">// Output:</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">// Enter a student Record:</span></span>
+<span class="Comment"><span class="-spell">// ID:</span></span>
+<span class="Comment"><span class="-spell">// 65</span></span>
+<span class="Comment"><span class="-spell">// NAME:</span></span>
+<span class="Comment"><span class="-spell">// studentguy</span></span>
+<span class="Comment"><span class="-spell">// GPA:</span></span>
+<span class="Comment"><span class="-spell">// 900</span></span>
+<span class="Comment"><span class="-spell">// STUDENT RECORD</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">// ID: 65</span></span>
+<span class="Comment"><span class="-spell">// NAME: studentguy</span></span>
+<span class="Comment"><span class="-spell">// GPA: 900</span></span>
+
+</pre>
+</body>
+</html>

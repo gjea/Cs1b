@@ -1,0 +1,122 @@
+<!-- vim: set nomodeline: -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>/home/jira/Documents/code/repos/Cs1b/HW1/HW_1b/source.cpp</title>
+<meta name="colorscheme" content="eldritch"></meta>
+<style>
+* {font-family: monospace}
+body {background-color: #000000; color: #ebfafa}
+.-operator {color: #04d1f9}
+.-string-escape {color: #a48cf2}
+.Function {color: #f265b5}
+.PreProc {color: #10a1bd}
+.-ibl-whitespace-char-1 {color: #3b4261}
+.-spell {}
+.Comment {color: #6a9955}
+.-variable {color: #04d1f9}
+.-type-builtin {color: #0aaed2}
+.-punctuation-bracket {color: #abb4da}
+.Constant {color: #f16c75}
+.-ibl-indent-char-1 {color: #3b4261}
+.Character {color: #f7c67f}
+.String {color: #f1fc79}
+.-keyword {color: #37f499}
+.-punctuation-delimiter {color: #04d1f9}
+.-variable-parameter {color: #a48cf2}
+</style>
+</head>
+<body style="display: flex">
+<pre>
+<span class="Comment"><span class="-spell">// Attached: HW 1(a-e)</span></span>
+<span class="Comment"><span class="-spell">// File: HW_1b.pdf</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">// Programmer: Gage Alvarez</span></span>
+<span class="Comment"><span class="-spell">// Class: CS 1B</span></span>
+<span class="Comment"><span class="-spell">// Instructor: Med Mogasemi</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">// Program: Display Average Temperature</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">// Description:</span></span>
+<span class="Comment"><span class="-spell">// After inputting three Temperatures, program finds the average and displays it</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="PreProc">#include</span> <span class="String">&lt;iostream&gt;</span>
+<span class="Comment"><span class="-spell">// function prototypes</span></span>
+<span class="-type-builtin">void</span> <span class="-variable"><span class="Function">getTemps</span></span><span class="-punctuation-bracket">(</span><span class="-type-builtin">float</span> <span class="-variable-parameter"><span class="-operator">&amp;</span><span class="-variable">temp1</span></span><span class="-punctuation-delimiter">,</span> <span class="-type-builtin">float</span> <span class="-variable-parameter"><span class="-operator">&amp;</span><span class="-variable">temp2</span></span><span class="-punctuation-delimiter">,</span> <span class="-type-builtin">float</span> <span class="-variable-parameter"><span class="-operator">&amp;</span><span class="-variable">temp3</span></span><span class="-punctuation-bracket">)</span><span class="-punctuation-delimiter">;</span>
+<span class="-type-builtin">float</span> <span class="-variable"><span class="Function">calcAvg</span></span><span class="-punctuation-bracket">(</span><span class="-type-builtin">float</span> <span class="-variable"><span class="-variable-parameter">temp1</span></span><span class="-punctuation-delimiter">,</span> <span class="-type-builtin">float</span> <span class="-variable"><span class="-variable-parameter">temp2</span></span><span class="-punctuation-delimiter">,</span> <span class="-type-builtin">float</span> <span class="-variable"><span class="-variable-parameter">temp3</span></span><span class="-punctuation-bracket">)</span><span class="-punctuation-delimiter">;</span>
+<span class="-type-builtin">void</span> <span class="-variable"><span class="Function">displayAvg</span></span><span class="-punctuation-bracket">(</span><span class="-type-builtin">float</span> <span class="-variable"><span class="-variable-parameter">temp1</span></span><span class="-punctuation-delimiter">,</span> <span class="-type-builtin">float</span> <span class="-variable"><span class="-variable-parameter">temp2</span></span><span class="-punctuation-delimiter">,</span> <span class="-type-builtin">float</span> <span class="-variable"><span class="-variable-parameter">temp3</span></span><span class="-punctuation-delimiter">,</span> <span class="-type-builtin">float</span> <span class="-variable"><span class="-variable-parameter">average</span></span><span class="-punctuation-bracket">)</span><span class="-punctuation-delimiter">;</span>
+
+<span class="Comment"><span class="-spell">// main</span></span>
+
+<span class="-type-builtin">int</span> <span class="-variable"><span class="Function">main</span></span><span class="-punctuation-bracket">(</span><span class="-punctuation-bracket">)</span> <span class="-punctuation-bracket">{</span>
+<span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="Comment"><span class="-spell">// initialize variables</span></span>
+<span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-type-builtin">float</span> <span class="-variable">temp1</span> <span class="-operator">=</span> <span class="Constant">0</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-type-builtin">float</span> <span class="-variable">temp2</span> <span class="-operator">=</span> <span class="Constant">0</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-type-builtin">float</span> <span class="-variable">temp3</span> <span class="-operator">=</span> <span class="Constant">0</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-type-builtin">float</span> <span class="-variable">average</span> <span class="-operator">=</span> <span class="Constant">0</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="Comment"><span class="-spell">// function to retrieve all 3 Temperatures</span></span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-variable"><span class="Function">getTemps</span></span><span class="-punctuation-bracket">(</span><span class="-variable">temp1</span><span class="-punctuation-delimiter">,</span> <span class="-variable">temp2</span><span class="-punctuation-delimiter">,</span> <span class="-variable">temp3</span><span class="-punctuation-bracket">)</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="Comment"><span class="-spell">// function to calculate the average of the three temperatures</span></span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-variable">average</span> <span class="-operator">=</span> <span class="-variable"><span class="Function">calcAvg</span></span><span class="-punctuation-bracket">(</span><span class="-variable">temp1</span><span class="-punctuation-delimiter">,</span> <span class="-variable">temp2</span><span class="-punctuation-delimiter">,</span> <span class="-variable">temp3</span><span class="-punctuation-bracket">)</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="Comment"><span class="-spell">// function to display the average and the three temperatures</span></span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-variable"><span class="Function">displayAvg</span></span><span class="-punctuation-bracket">(</span><span class="-variable">temp1</span><span class="-punctuation-delimiter">,</span> <span class="-variable">temp2</span><span class="-punctuation-delimiter">,</span> <span class="-variable">temp3</span><span class="-punctuation-delimiter">,</span> <span class="-variable">average</span><span class="-punctuation-bracket">)</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-keyword">return</span> <span class="Constant">0</span><span class="-punctuation-delimiter">;</span>
+<span class="-punctuation-bracket">}</span> <span class="Comment"><span class="-spell">// end of main</span></span>
+
+<span class="Comment"><span class="-spell">// getTemps</span></span>
+<span class="Comment"><span class="-spell">// function accepts input 3 times for the three temperatures</span></span>
+<span class="Comment"><span class="-spell">// Input: temperature variables and user input</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">// Output: temperature variables</span></span>
+<span class="-type-builtin">void</span> <span class="-variable"><span class="Function">getTemps</span></span><span class="-punctuation-bracket">(</span><span class="-type-builtin">float</span> <span class="-variable-parameter"><span class="-operator">&amp;</span><span class="-variable">temp1</span></span><span class="-punctuation-delimiter">,</span> <span class="-type-builtin">float</span> <span class="-variable-parameter"><span class="-operator">&amp;</span><span class="-variable">temp2</span></span><span class="-punctuation-delimiter">,</span> <span class="-type-builtin">float</span> <span class="-variable-parameter"><span class="-operator">&amp;</span><span class="-variable">temp3</span></span><span class="-punctuation-bracket">)</span> <span class="-punctuation-bracket">{</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cout</span> <span class="-operator">&lt;&lt;</span> <span class="String">&quot;Enter temp 1: &quot;</span> <span class="-operator">&lt;&lt;</span> <span class="Character">'<span class="-string-escape">\n</span>'</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cin</span> <span class="-operator">&gt;&gt;</span> <span class="-variable">temp1</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cout</span> <span class="-operator">&lt;&lt;</span> <span class="String">&quot;Enter temp 2: &quot;</span> <span class="-operator">&lt;&lt;</span> <span class="Character">'<span class="-string-escape">\n</span>'</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cin</span> <span class="-operator">&gt;&gt;</span> <span class="-variable">temp2</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cout</span> <span class="-operator">&lt;&lt;</span> <span class="String">&quot;Enter temp 3: &quot;</span> <span class="-operator">&lt;&lt;</span> <span class="Character">'<span class="-string-escape">\n</span>'</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cin</span> <span class="-operator">&gt;&gt;</span> <span class="-variable">temp3</span><span class="-punctuation-delimiter">;</span>
+<span class="-punctuation-bracket">}</span> <span class="Comment"><span class="-spell">// end of getTemps</span></span>
+
+<span class="Comment"><span class="-spell">// calcAvg</span></span>
+<span class="Comment"><span class="-spell">// function calculates the average of the three temperatures</span></span>
+<span class="Comment"><span class="-spell">// returns value to main</span></span>
+<span class="Comment"><span class="-spell">// Input: 3 temp variables</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">// Output: average of temp variables</span></span>
+<span class="-type-builtin">float</span> <span class="-variable"><span class="Function">calcAvg</span></span><span class="-punctuation-bracket">(</span><span class="-type-builtin">float</span> <span class="-variable"><span class="-variable-parameter">temp1</span></span><span class="-punctuation-delimiter">,</span> <span class="-type-builtin">float</span> <span class="-variable"><span class="-variable-parameter">temp2</span></span><span class="-punctuation-delimiter">,</span> <span class="-type-builtin">float</span> <span class="-variable"><span class="-variable-parameter">temp3</span></span><span class="-punctuation-bracket">)</span> <span class="-punctuation-bracket">{</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-keyword">return</span> <span class="-punctuation-bracket">(</span><span class="-variable">temp1</span> <span class="-operator">+</span> <span class="-variable">temp2</span> <span class="-operator">+</span> <span class="-variable">temp3</span><span class="-punctuation-bracket">)</span> <span class="-operator">/</span> <span class="Constant">3</span><span class="-punctuation-delimiter">;</span>
+<span class="-punctuation-bracket">}</span> <span class="Comment"><span class="-spell">// end of calcAvg</span></span>
+
+<span class="Comment"><span class="-spell">// displayAvg</span></span>
+<span class="Comment"><span class="-spell">// function displays all important values such as average, and the three</span></span>
+<span class="Comment"><span class="-spell">// temperatures</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">// input: 3 temp variables and average</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">// Output: displays values to console</span></span>
+<span class="-type-builtin">void</span> <span class="-variable"><span class="Function">displayAvg</span></span><span class="-punctuation-bracket">(</span><span class="-type-builtin">float</span> <span class="-variable"><span class="-variable-parameter">temp1</span></span><span class="-punctuation-delimiter">,</span> <span class="-type-builtin">float</span> <span class="-variable"><span class="-variable-parameter">temp2</span></span><span class="-punctuation-delimiter">,</span> <span class="-type-builtin">float</span> <span class="-variable"><span class="-variable-parameter">temp3</span></span><span class="-punctuation-delimiter">,</span> <span class="-type-builtin">float</span> <span class="-variable"><span class="-variable-parameter">average</span></span><span class="-punctuation-bracket">)</span> <span class="-punctuation-bracket">{</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cout</span> <span class="-operator">&lt;&lt;</span> <span class="String">&quot;City #1 temp&quot;</span> <span class="-operator">&lt;&lt;</span> <span class="-variable">temp1</span> <span class="-operator">&lt;&lt;</span> <span class="Character">'<span class="-string-escape">\n</span>'</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cout</span> <span class="-operator">&lt;&lt;</span> <span class="String">&quot;City #2 temp&quot;</span> <span class="-operator">&lt;&lt;</span> <span class="-variable">temp2</span> <span class="-operator">&lt;&lt;</span> <span class="Character">'<span class="-string-escape">\n</span>'</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cout</span> <span class="-operator">&lt;&lt;</span> <span class="String">&quot;City #3 temp&quot;</span> <span class="-operator">&lt;&lt;</span> <span class="-variable">temp3</span> <span class="-operator">&lt;&lt;</span> <span class="Character">'<span class="-string-escape">\n</span>'</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cout</span> <span class="-operator">&lt;&lt;</span> <span class="String">&quot;Average temp: &quot;</span> <span class="-operator">&lt;&lt;</span> <span class="-variable">average</span> <span class="-operator">&lt;&lt;</span> <span class="Character">'<span class="-string-escape">\n</span>'</span><span class="-punctuation-delimiter">;</span>
+<span class="-punctuation-bracket">}</span> <span class="Comment"><span class="-spell">// end of displayAvg</span></span>
+<span class="Comment"><span class="-spell">// Output:</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">// Enter temp 1:</span></span>
+<span class="Comment"><span class="-spell">// 98</span></span>
+<span class="Comment"><span class="-spell">// Enter temp 2:</span></span>
+<span class="Comment"><span class="-spell">// 45</span></span>
+<span class="Comment"><span class="-spell">// Enter temp 3:</span></span>
+<span class="Comment"><span class="-spell">// 10000</span></span>
+<span class="Comment"><span class="-spell">// City #1 temp98</span></span>
+<span class="Comment"><span class="-spell">// City #2 temp45</span></span>
+<span class="Comment"><span class="-spell">// City #3 temp10000</span></span>
+<span class="Comment"><span class="-spell">// Average temp: 3381</span></span>
+
+</pre>
+</body>
+</html>
