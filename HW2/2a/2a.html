@@ -1,0 +1,90 @@
+<!-- vim: set nomodeline: -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>/home/jira/Documents/code/repos/Cs1b/HW2/2a/c_strings.cpp</title>
+<meta name="colorscheme" content="eldritch"></meta>
+<style>
+* {font-family: monospace}
+body {background-color: #000000; color: #ebfafa}
+.-operator {color: #04d1f9}
+.-string-escape {color: #a48cf2}
+.Function {color: #f265b5}
+.PreProc {color: #10a1bd}
+.-ibl-indent-char-1 {color: #3b4261}
+.-spell {}
+.-punctuation-bracket {color: #abb4da}
+.Comment {color: #6a9955}
+.-variable {color: #04d1f9}
+.-type-builtin {color: #0aaed2}
+.-variable-parameter {color: #a48cf2}
+.Constant {color: #f16c75}
+.Character {color: #f7c67f}
+.-ibl-whitespace-char-1 {color: #3b4261}
+.-keyword {color: #37f499}
+.String {color: #f1fc79}
+.-punctuation-delimiter {color: #04d1f9}
+</style>
+</head>
+<body style="display: flex">
+<pre>
+<span class="Comment"><span class="-spell">// Attached: HW 2(a)</span></span>
+<span class="Comment"><span class="-spell">// File: HW_2a.pdf</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">// Programmer: Gage Alvarez</span></span>
+<span class="Comment"><span class="-spell">// Class: CS 1B</span></span>
+<span class="Comment"><span class="-spell">// Instructor: Med Mogasemi</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">// Program: Concatenate c strings</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">// Description:</span></span>
+<span class="Comment"><span class="-spell">// The program takes a first name and an inputted last name, and concatenates</span></span>
+<span class="Comment"><span class="-spell">// the two cstrings together and then prints the full name to the console</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+
+<span class="PreProc">#include</span> <span class="String">&lt;cstring&gt;</span>
+<span class="PreProc">#include</span> <span class="String">&lt;iostream&gt;</span>
+
+<span class="Comment"><span class="-spell">// function prototypes</span></span>
+<span class="-type-builtin">void</span> <span class="-variable"><span class="Function">displayInfo</span></span><span class="-punctuation-bracket">(</span><span class="-type-builtin">char</span> <span class="-variable-parameter"><span class="-variable">fullName</span><span class="-punctuation-bracket">[</span><span class="-punctuation-bracket">]</span></span><span class="-punctuation-delimiter">,</span> <span class="-type-builtin">int</span> <span class="-variable"><span class="-variable-parameter">age</span></span><span class="-punctuation-bracket">)</span><span class="-punctuation-delimiter">;</span>
+
+<span class="-type-builtin">int</span> <span class="-variable"><span class="Function">main</span></span><span class="-punctuation-bracket">(</span><span class="-punctuation-bracket">)</span> <span class="-punctuation-bracket">{</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="Comment"><span class="-spell">// variable init</span></span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-type-builtin">char</span> <span class="-variable">firstName</span><span class="-punctuation-bracket">[</span><span class="Constant">10</span><span class="-punctuation-bracket">]</span> <span class="-operator">=</span> <span class="String">&quot;name&quot;</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-type-builtin">char</span> <span class="-variable">lastName</span><span class="-punctuation-bracket">[</span><span class="Constant">10</span><span class="-punctuation-bracket">]</span> <span class="-operator">=</span> <span class="String">&quot;&quot;</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-type-builtin">char</span> <span class="-variable">fullName</span><span class="-punctuation-bracket">[</span><span class="Constant">20</span><span class="-punctuation-bracket">]</span> <span class="-operator">=</span> <span class="String">&quot;&quot;</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-type-builtin">int</span> <span class="-variable">age</span> <span class="-operator">=</span> <span class="Constant">0</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cout</span> <span class="-operator">&lt;&lt;</span> <span class="String">&quot;How old are you?&quot;</span> <span class="-operator">&lt;&lt;</span> <span class="Character">'<span class="-string-escape">\n</span>'</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cin</span> <span class="-operator">&gt;&gt;</span> <span class="-variable">age</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cout</span> <span class="-operator">&lt;&lt;</span> <span class="String">&quot;What is your last name ? (must be 9 characters or less)&quot;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-operator">&lt;&lt;</span> <span class="Character">'<span class="-string-escape">\n</span>'</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cin</span> <span class="-operator">&gt;&gt;</span> <span class="-variable">lastName</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-variable"><span class="Function">strcat</span></span><span class="-punctuation-bracket">(</span><span class="-variable">fullName</span><span class="-punctuation-delimiter">,</span> <span class="-variable">firstName</span><span class="-punctuation-bracket">)</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-variable"><span class="Function">strcat</span></span><span class="-punctuation-bracket">(</span><span class="-variable">fullName</span><span class="-punctuation-delimiter">,</span> <span class="String">&quot; &quot;</span><span class="-punctuation-bracket">)</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-variable"><span class="Function">strcat</span></span><span class="-punctuation-bracket">(</span><span class="-variable">fullName</span><span class="-punctuation-delimiter">,</span> <span class="-variable">lastName</span><span class="-punctuation-bracket">)</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-variable"><span class="Function">displayInfo</span></span><span class="-punctuation-bracket">(</span><span class="-variable">fullName</span><span class="-punctuation-delimiter">,</span> <span class="-variable">age</span><span class="-punctuation-bracket">)</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-keyword">return</span> <span class="Constant">0</span><span class="-punctuation-delimiter">;</span>
+<span class="-punctuation-bracket">}</span>
+
+<span class="Comment"><span class="-spell">// function displayInfo displays all relevant values to the console</span></span>
+<span class="Comment"><span class="-spell">// Inputs:fullName, and age</span></span>
+<span class="-type-builtin">void</span> <span class="-variable"><span class="Function">displayInfo</span></span><span class="-punctuation-bracket">(</span><span class="-type-builtin">char</span> <span class="-variable-parameter"><span class="-variable">fullName</span><span class="-punctuation-bracket">[</span><span class="-punctuation-bracket">]</span></span><span class="-punctuation-delimiter">,</span> <span class="-type-builtin">int</span> <span class="-variable"><span class="-variable-parameter">age</span></span><span class="-punctuation-bracket">)</span> <span class="-punctuation-bracket">{</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cout</span> <span class="-operator">&lt;&lt;</span> <span class="String">&quot;Hello &quot;</span> <span class="-operator">&lt;&lt;</span> <span class="-variable">fullName</span> <span class="-operator">&lt;&lt;</span> <span class="String">&quot;. &quot;</span> <span class="-operator">&lt;&lt;</span> <span class="Character">'<span class="-string-escape">\n</span>'</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cout</span> <span class="-operator">&lt;&lt;</span> <span class="String">&quot;You are &quot;</span> <span class="-operator">&lt;&lt;</span> <span class="-variable">age</span> <span class="-operator">&lt;&lt;</span> <span class="String">&quot; years old. &quot;</span> <span class="-operator">&lt;&lt;</span> <span class="Character">'<span class="-string-escape">\n</span>'</span><span class="-punctuation-delimiter">;</span>
+<span class="-punctuation-bracket">}</span>
+<span class="Comment"><span class="-spell">// Output</span></span>
+<span class="Comment"><span class="-spell">// How old are you?</span></span>
+<span class="Comment"><span class="-spell">// 98</span></span>
+<span class="Comment"><span class="-spell">// What is your last name ? (must be 9 characters or less)</span></span>
+<span class="Comment"><span class="-spell">// walder</span></span>
+<span class="Comment"><span class="-spell">// Hello name walder.</span></span>
+<span class="Comment"><span class="-spell">// You are 98 years old.</span></span>
+
+</pre>
+</body>
+</html>

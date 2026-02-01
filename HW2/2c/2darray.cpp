@@ -51,3 +51,34 @@ void displayArray(int numArray[][4]) {
     }
     std::cout << '\n';
 } // end of displayArray
+
+// Output:
+// Enter a number.
+// 98
+// Enter a number.
+// 43
+// Enter a number.
+// 34
+// Enter a number.
+// 56
+// Enter a number.
+// 223
+// Enter a number.
+// 34
+// Enter a number.
+// 45
+// Enter a number.
+// 46
+// Enter a number.
+// 92
+// Enter a number.
+// 018
+// Enter a number.
+// 75
+// Enter a number.
+// 888
+// here is the data in the 2d array
+//
+//   98   43   34   56
+//  223   34   45   46
+//   92   18   75  888

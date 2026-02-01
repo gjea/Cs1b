@@ -27,7 +27,7 @@ int main() {
     char fullName[20] = "";
     int age = 0;
 
-    std::cout << "How age areyou?" << '\n';
+    std::cout << "How old are you?" << '\n';
     std::cin >> age;
     std::cout << "What is your last name ? (must be 9 characters or less)"
               << '\n';
@@ -46,3 +46,10 @@ void displayInfo(char fullName[], int age) {
     std::cout << "Hello " << fullName << ". " << '\n';
     std::cout << "You are " << age << " years old. " << '\n';
 }
+// Output
+// How old are you?
+// 98
+// What is your last name ? (must be 9 characters or less)
+// walder
+// Hello name walder.
+// You are 98 years old.

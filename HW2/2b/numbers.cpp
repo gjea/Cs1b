@@ -31,3 +31,11 @@ int main() {
     std::cout << "id not found in list" << '\n';
     return 0;
 }
+
+// Output:
+//  Enter ID number:
+//  99999
+//  id not found in list
+//  Enter ID number:
+//  11223
+//  id found at index 2

@@ -69,6 +69,7 @@ void displayGrades(char student_grades[][g_CLASSES]) {
 } // end of displayGrades
 
 // function calculateStudentGPA calculates the students GPA based on the grades
+//
 // in the 2d array Inputs: student_grades array as well as a numerical student
 // parameter to specify which student's grade is being calculated Outputs: the
 // total GPA of the student returned to function call
@@ -135,3 +136,20 @@ void displayGPAPerClass(char student_grades[][g_CLASSES]) {
         std::cout << std::setw(3) << classGPA << "\t";
     }
 } // end of displayGPAPerClass
+
+// Output
+// Display overall grades
+// Grades for student 1	 A   F   F
+// Grades for student 2	 F   F   F
+// Grades for student 3	 F   F   F
+// Grades for student 4	 C   D   G
+// Grades for student 5	 A   B   C
+// student GPAs
+// GPA for student 1: 1.33333
+// GPA for student 2: 0
+// GPA for student 3: 0
+// GPA for student 4: 1
+// GPA for student 5: 3
+// Average GPA per subject
+// English	History	Math
+//   2	0.8	0.4

@@ -1,0 +1,120 @@
+<!-- vim: set nomodeline: -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>/home/jira/Documents/code/repos/Cs1b/HW2/2c/2darray.cpp</title>
+<meta name="colorscheme" content="eldritch"></meta>
+<style>
+* {font-family: monospace}
+body {background-color: #000000; color: #ebfafa}
+.-operator {color: #04d1f9}
+.-string-escape {color: #a48cf2}
+.Function {color: #f265b5}
+.PreProc {color: #10a1bd}
+.-ibl-indent-char-1 {color: #3b4261}
+.-spell {}
+.Comment {color: #6a9955}
+.-variable {color: #04d1f9}
+.-punctuation-delimiter {color: #04d1f9}
+.-type-builtin {color: #0aaed2}
+.-variable-parameter {color: #a48cf2}
+.-punctuation-bracket {color: #abb4da}
+.-ibl-whitespace-char-1 {color: #3b4261}
+.Character {color: #f7c67f}
+.String {color: #f1fc79}
+.-keyword {color: #37f499}
+.Constant {color: #f16c75}
+.Statement {color: #a48cf2}
+</style>
+</head>
+<body style="display: flex">
+<pre>
+<span class="Comment"><span class="-spell">// Attached: HW 2(c)</span></span>
+<span class="Comment"><span class="-spell">// File: HW_2c.pdf</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">// Programmer: Gage Alvarez</span></span>
+<span class="Comment"><span class="-spell">// Class: CS 1B</span></span>
+<span class="Comment"><span class="-spell">// Instructor: Med Mogasemi</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">// Program: Display 2d array</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">// Description:</span></span>
+<span class="Comment"><span class="-spell">// Program allows you to fill a 2d array with numbers, then displays the array.</span></span>
+
+<span class="PreProc">#include</span> <span class="String">&lt;iomanip&gt;</span>
+<span class="PreProc">#include</span> <span class="String">&lt;iostream&gt;</span>
+
+<span class="Comment"><span class="-spell">// function prototypes</span></span>
+<span class="-type-builtin">void</span> <span class="-variable"><span class="Function">getData</span></span><span class="-punctuation-bracket">(</span><span class="-type-builtin">int</span> <span class="-variable-parameter"><span class="-variable">numArray</span><span class="-punctuation-bracket">[</span><span class="-punctuation-bracket">]</span><span class="-punctuation-bracket">[</span><span class="Constant">4</span><span class="-punctuation-bracket">]</span></span><span class="-punctuation-bracket">)</span><span class="-punctuation-delimiter">;</span>
+<span class="-type-builtin">void</span> <span class="-variable"><span class="Function">displayArray</span></span><span class="-punctuation-bracket">(</span><span class="-type-builtin">int</span> <span class="-variable-parameter"><span class="-variable">numArray</span><span class="-punctuation-bracket">[</span><span class="-punctuation-bracket">]</span><span class="-punctuation-bracket">[</span><span class="Constant">4</span><span class="-punctuation-bracket">]</span></span><span class="-punctuation-bracket">)</span><span class="-punctuation-delimiter">;</span>
+
+<span class="-type-builtin">int</span> <span class="-variable"><span class="Function">main</span></span><span class="-punctuation-bracket">(</span><span class="-punctuation-bracket">)</span> <span class="-punctuation-bracket">{</span>
+<span class="-ibl-indent-char-1">▎</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-type-builtin">int</span> <span class="-variable">numArray</span><span class="-punctuation-bracket">[</span><span class="Constant">3</span><span class="-punctuation-bracket">]</span><span class="-punctuation-bracket">[</span><span class="Constant">4</span><span class="-punctuation-bracket">]</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-variable"><span class="Function">getData</span></span><span class="-punctuation-bracket">(</span><span class="-variable">numArray</span><span class="-punctuation-bracket">)</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-variable"><span class="Function">displayArray</span></span><span class="-punctuation-bracket">(</span><span class="-variable">numArray</span><span class="-punctuation-bracket">)</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-keyword">return</span> <span class="Constant">0</span><span class="-punctuation-delimiter">;</span>
+<span class="-punctuation-bracket">}</span> <span class="Comment"><span class="-spell">// end of main</span></span>
+
+<span class="Comment"><span class="-spell">// function getData fills the array with user inputted numbers</span></span>
+<span class="Comment"><span class="-spell">// Inputs: the array numArray, and user input for every slot in the array</span></span>
+<span class="-type-builtin">void</span> <span class="-variable"><span class="Function">getData</span></span><span class="-punctuation-bracket">(</span><span class="-type-builtin">int</span> <span class="-variable-parameter"><span class="-variable">numArray</span><span class="-punctuation-bracket">[</span><span class="-punctuation-bracket">]</span><span class="-punctuation-bracket">[</span><span class="Constant">4</span><span class="-punctuation-bracket">]</span></span><span class="-punctuation-bracket">)</span> <span class="-punctuation-bracket">{</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="Statement">for</span> <span class="-punctuation-bracket">(</span><span class="-type-builtin">int</span> <span class="-variable">i</span> <span class="-operator">=</span> <span class="Constant">0</span><span class="-punctuation-delimiter">;</span> <span class="-variable">i</span> <span class="-operator">&lt;</span> <span class="Constant">3</span><span class="-punctuation-delimiter">;</span> <span class="-variable">i</span><span class="-operator">++</span><span class="-punctuation-bracket">)</span> <span class="-punctuation-bracket">{</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="Statement">for</span> <span class="-punctuation-bracket">(</span><span class="-type-builtin">int</span> <span class="-variable">j</span> <span class="-operator">=</span> <span class="Constant">0</span><span class="-punctuation-delimiter">;</span> <span class="-variable">j</span> <span class="-operator">&lt;</span> <span class="Constant">4</span><span class="-punctuation-delimiter">;</span> <span class="-variable">j</span><span class="-operator">++</span><span class="-punctuation-bracket">)</span> <span class="-punctuation-bracket">{</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cout</span> <span class="-operator">&lt;&lt;</span> <span class="String">&quot;Enter a number. &quot;</span> <span class="-operator">&lt;&lt;</span> <span class="Character">'<span class="-string-escape">\n</span>'</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cin</span> <span class="-operator">&gt;&gt;</span> <span class="-variable">numArray</span><span class="-punctuation-bracket">[</span><span class="-variable">i</span><span class="-punctuation-bracket">]</span><span class="-punctuation-bracket">[</span><span class="-variable">j</span><span class="-punctuation-bracket">]</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-punctuation-bracket">}</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-punctuation-bracket">}</span>
+<span class="-punctuation-bracket">}</span> <span class="Comment"><span class="-spell">// end of getData</span></span>
+
+<span class="Comment"><span class="-spell">// function displayArray prints out the data in the 2d array to the console.</span></span>
+<span class="Comment"><span class="-spell">// Inputs: filled numArray with values</span></span>
+<span class="-type-builtin">void</span> <span class="-variable"><span class="Function">displayArray</span></span><span class="-punctuation-bracket">(</span><span class="-type-builtin">int</span> <span class="-variable-parameter"><span class="-variable">numArray</span><span class="-punctuation-bracket">[</span><span class="-punctuation-bracket">]</span><span class="-punctuation-bracket">[</span><span class="Constant">4</span><span class="-punctuation-bracket">]</span></span><span class="-punctuation-bracket">)</span> <span class="-punctuation-bracket">{</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cout</span> <span class="-operator">&lt;&lt;</span> <span class="String">&quot;here is the data in the 2d array&quot;</span> <span class="-operator">&lt;&lt;</span> <span class="Character">'<span class="-string-escape">\n</span>'</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="Statement">for</span> <span class="-punctuation-bracket">(</span><span class="-type-builtin">int</span> <span class="-variable">i</span> <span class="-operator">=</span> <span class="Constant">0</span><span class="-punctuation-delimiter">;</span> <span class="-variable">i</span> <span class="-operator">&lt;</span> <span class="Constant">3</span><span class="-punctuation-delimiter">;</span> <span class="-variable">i</span><span class="-operator">++</span><span class="-punctuation-bracket">)</span> <span class="-punctuation-bracket">{</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cout</span> <span class="-operator">&lt;&lt;</span> <span class="Character">'<span class="-string-escape">\n</span>'</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="Statement">for</span> <span class="-punctuation-bracket">(</span><span class="-type-builtin">int</span> <span class="-variable">j</span> <span class="-operator">=</span> <span class="Constant">0</span><span class="-punctuation-delimiter">;</span> <span class="-variable">j</span> <span class="-operator">&lt;</span> <span class="Constant">4</span><span class="-punctuation-delimiter">;</span> <span class="-variable">j</span><span class="-operator">++</span><span class="-punctuation-bracket">)</span> <span class="-punctuation-bracket">{</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cout</span> <span class="-operator">&lt;&lt;</span> <span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable"><span class="Function">setw</span></span><span class="-punctuation-bracket">(</span><span class="Constant">4</span><span class="-punctuation-bracket">)</span> <span class="-operator">&lt;&lt;</span> <span class="-variable">numArray</span><span class="-punctuation-bracket">[</span><span class="-variable">i</span><span class="-punctuation-bracket">]</span><span class="-punctuation-bracket">[</span><span class="-variable">j</span><span class="-punctuation-bracket">]</span> <span class="-operator">&lt;&lt;</span> <span class="String">&quot; &quot;</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-punctuation-bracket">}</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-punctuation-bracket">}</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cout</span> <span class="-operator">&lt;&lt;</span> <span class="Character">'<span class="-string-escape">\n</span>'</span><span class="-punctuation-delimiter">;</span>
+<span class="-punctuation-bracket">}</span> <span class="Comment"><span class="-spell">// end of displayArray</span></span>
+
+<span class="Comment"><span class="-spell">// Output:</span></span>
+<span class="Comment"><span class="-spell">// Enter a number.</span></span>
+<span class="Comment"><span class="-spell">// 98</span></span>
+<span class="Comment"><span class="-spell">// Enter a number.</span></span>
+<span class="Comment"><span class="-spell">// 43</span></span>
+<span class="Comment"><span class="-spell">// Enter a number.</span></span>
+<span class="Comment"><span class="-spell">// 34</span></span>
+<span class="Comment"><span class="-spell">// Enter a number.</span></span>
+<span class="Comment"><span class="-spell">// 56</span></span>
+<span class="Comment"><span class="-spell">// Enter a number.</span></span>
+<span class="Comment"><span class="-spell">// 223</span></span>
+<span class="Comment"><span class="-spell">// Enter a number.</span></span>
+<span class="Comment"><span class="-spell">// 34</span></span>
+<span class="Comment"><span class="-spell">// Enter a number.</span></span>
+<span class="Comment"><span class="-spell">// 45</span></span>
+<span class="Comment"><span class="-spell">// Enter a number.</span></span>
+<span class="Comment"><span class="-spell">// 46</span></span>
+<span class="Comment"><span class="-spell">// Enter a number.</span></span>
+<span class="Comment"><span class="-spell">// 92</span></span>
+<span class="Comment"><span class="-spell">// Enter a number.</span></span>
+<span class="Comment"><span class="-spell">// 018</span></span>
+<span class="Comment"><span class="-spell">// Enter a number.</span></span>
+<span class="Comment"><span class="-spell">// 75</span></span>
+<span class="Comment"><span class="-spell">// Enter a number.</span></span>
+<span class="Comment"><span class="-spell">// 888</span></span>
+<span class="Comment"><span class="-spell">// here is the data in the 2d array</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">//   98   43   34   56</span></span>
+<span class="Comment"><span class="-spell">//  223   34   45   46</span></span>
+<span class="Comment"><span class="-spell">//   92   18   75  888</span></span>
+
+</pre>
+</body>
+</html>
