@@ -1,0 +1,88 @@
+<!-- vim: set nomodeline: -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>/home/jira/Documents/code/repos/Cs1b/HW3/3a/decToBinary.cpp</title>
+<meta name="colorscheme" content="eldritch"></meta>
+<style>
+* {font-family: monospace}
+body {background-color: #000000; color: #ebfafa}
+.-operator {color: #04d1f9}
+.-string-escape {color: #a48cf2}
+.Function {color: #f265b5}
+.PreProc {color: #10a1bd}
+.LspReferenceRead {background-color: #3b4261}
+.-spell {}
+.String {color: #f1fc79}
+.LspReferenceText {background-color: #3b4261}
+.Comment {color: #6a9955}
+.-variable {color: #04d1f9}
+.Statement {color: #a48cf2}
+.-type-builtin {color: #0aaed2}
+.-variable-parameter {color: #a48cf2}
+.-punctuation-bracket {color: #abb4da}
+.-ibl-scope-char-1 {color: #37f499}
+.-ibl-whitespace-char-1 {color: #3b4261}
+.-ibl-indent-char-1 {color: #3b4261}
+.Character {color: #f7c67f}
+.-ibl-scope-underline-1 {text-decoration-color: #37f499; text-decoration-line: underline}
+.-keyword {color: #37f499}
+.Constant {color: #f16c75}
+.-punctuation-delimiter {color: #04d1f9}
+</style>
+</head>
+<body style="display: flex">
+<pre>
+<span class="Comment"><span class="-spell">// Attached: HW 3(a)</span></span>
+<span class="Comment"><span class="-spell">// File: HW_3a.pdf</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">// Programmer: Gage Alvarez</span></span>
+<span class="Comment"><span class="-spell">// Class: CS 1B</span></span>
+<span class="Comment"><span class="-spell">// Instructor: Med Mogasemi</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">// Program: Convert decimal to binary</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">// Description: Program converts a decimal number to binary</span></span>
+
+<span class="PreProc">#include</span> <span class="String">&lt;iostream&gt;</span>
+
+<span class="-type-builtin">void</span> <span class="-variable"><span class="Function">decToBinary</span></span><span class="-punctuation-bracket">(</span><span class="-keyword">const</span> <span class="-type-builtin">int</span> <span class="-variable"><span class="-variable-parameter">num</span></span><span class="-punctuation-bracket">)</span><span class="-punctuation-delimiter">;</span>
+<span class="-type-builtin">int</span> <span class="-variable"><span class="Function">main</span></span><span class="-punctuation-bracket">(</span><span class="-punctuation-bracket">)</span> <span class="-punctuation-bracket">{</span>
+<span class="-ibl-indent-char-1">▎</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-type-builtin">int</span> <span class="-variable"><span class="LspReferenceText">num</span></span> <span class="-operator">=</span> <span class="Constant">0</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cout</span> <span class="-operator">&lt;&lt;</span> <span class="String">&quot;Enter a non-negative integer value: &quot;</span> <span class="-operator">&lt;&lt;</span> <span class="Character">'<span class="-string-escape">\n</span>'</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cin</span> <span class="-operator">&gt;&gt;</span> <span class="-variable"><span class="LspReferenceText">num</span></span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="Statement"><span class="-ibl-scope-underline-1">while</span></span><span class="-ibl-scope-underline-1"> <span class="-punctuation-bracket">(</span><span class="-variable"><span class="LspReferenceRead">num</span></span> <span class="-operator">&lt;</span> <span class="Constant">0</span><span class="-punctuation-bracket">)</span> <span class="-punctuation-bracket">{</span></span><span class="-punctuation-bracket"></span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-scope-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cout</span> <span class="-operator">&lt;&lt;</span> <span class="String">&quot;Invalid input: enter number greater than 0&quot;</span> <span class="-operator">&lt;&lt;</span> <span class="Character">'<span class="-string-escape">\n</span>'</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-scope-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cin</span> <span class="-operator">&gt;&gt;</span> <span class="-variable"><span class="LspReferenceText">num</span></span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-punctuation-bracket">}</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cout</span> <span class="-operator">&lt;&lt;</span> <span class="String">&quot;decimal &quot;</span> <span class="-operator">&lt;&lt;</span> <span class="-variable"><span class="LspReferenceRead">num</span></span> <span class="-operator">&lt;&lt;</span> <span class="String">&quot; = &quot;</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-variable"><span class="Function">decToBinary</span></span><span class="-punctuation-bracket">(</span><span class="-variable"><span class="LspReferenceRead">num</span></span><span class="-punctuation-bracket">)</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cout</span> <span class="-operator">&lt;&lt;</span> <span class="String">&quot; binary&quot;</span> <span class="-operator">&lt;&lt;</span> <span class="Character">'<span class="-string-escape">\n</span>'</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-keyword">return</span> <span class="Constant">0</span><span class="-punctuation-delimiter">;</span>
+<span class="-punctuation-bracket">}</span>
+
+<span class="Comment"><span class="-spell">// function decToBinary converts a decimal number to binary</span></span>
+<span class="Comment"><span class="-spell">// Inputs: number to be converted</span></span>
+<span class="Comment"><span class="-spell">// Outputs: none</span></span>
+<span class="-type-builtin">void</span> <span class="-variable"><span class="Function">decToBinary</span></span><span class="-punctuation-bracket">(</span><span class="-keyword">const</span> <span class="-type-builtin">int</span> <span class="-variable"><span class="-variable-parameter">num</span></span><span class="-punctuation-bracket">)</span> <span class="-punctuation-bracket">{</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="Statement">if</span> <span class="-punctuation-bracket">(</span><span class="-variable">num</span> <span class="-operator">==</span> <span class="Constant">0</span><span class="-punctuation-bracket">)</span> <span class="-punctuation-bracket">{</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-keyword">return</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-punctuation-bracket">}</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-keyword">const</span> <span class="-type-builtin">int</span> <span class="-variable">half</span> <span class="-operator">=</span> <span class="-variable">num</span> <span class="-operator">/</span> <span class="Constant">2</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-keyword">const</span> <span class="-type-builtin">int</span> <span class="-variable">remainder</span> <span class="-operator">=</span> <span class="-variable">num</span> <span class="-operator">%</span> <span class="Constant">2</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-variable"><span class="Function">decToBinary</span></span><span class="-punctuation-bracket">(</span><span class="-variable">half</span><span class="-punctuation-bracket">)</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cout</span> <span class="-operator">&lt;&lt;</span> <span class="-variable">remainder</span> <span class="-operator">&lt;&lt;</span> <span class="Character">' '</span><span class="-punctuation-delimiter">;</span>
+<span class="-punctuation-bracket">}</span>
+
+<span class="Comment"><span class="-spell">// Output</span></span>
+<span class="Comment"><span class="-spell">// Enter a non-negative integer value:</span></span>
+<span class="Comment"><span class="-spell">// 5</span></span>
+<span class="Comment"><span class="-spell">// decimal 5 = 1 0 1  binary</span></span>
+
+</pre>
+</body>
+</html>
