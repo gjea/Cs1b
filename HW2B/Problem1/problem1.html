@@ -1,0 +1,111 @@
+<!-- vim: set nomodeline: -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>/home/jira/Documents/code/repos/Cs1b/HW2B/Problem1/problem1.cpp</title>
+<meta name="colorscheme" content="eldritch"></meta>
+<style>
+* {font-family: monospace}
+body {background-color: #000000; color: #ebfafa}
+.-operator {color: #04d1f9}
+.-string-escape {color: #a48cf2}
+.Function {color: #f265b5}
+.PreProc {color: #10a1bd}
+.-spell {}
+.Comment {color: #6a9955}
+.-variable {color: #04d1f9}
+.Statement {color: #a48cf2}
+.-type-builtin {color: #0aaed2}
+.-variable-parameter {color: #a48cf2}
+.-punctuation-bracket {color: #abb4da}
+.Constant {color: #f16c75}
+.-ibl-indent-char-1 {color: #3b4261}
+.Character {color: #f7c67f}
+.-ibl-whitespace-char-1 {color: #3b4261}
+.-punctuation-delimiter {color: #04d1f9}
+.String {color: #f1fc79}
+.-keyword {color: #37f499}
+</style>
+</head>
+<body style="display: flex">
+<pre>
+<span class="Comment"><span class="-spell">// Attached: HW 2B(1)</span></span>
+<span class="Comment"><span class="-spell">// File: HW_2B1.pdf</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">// Programmer: Gage Alvarez</span></span>
+<span class="Comment"><span class="-spell">// Class: CS 1B</span></span>
+<span class="Comment"><span class="-spell">// Instructor: Med Mogasemi</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">// Program: random numbers in array</span></span>
+<span class="Comment"><span class="-spell">//</span></span>
+<span class="Comment"><span class="-spell">// Description:</span></span>
+<span class="Comment"><span class="-spell">// populate array with random numbers, then find the greatest and smallest</span></span>
+<span class="Comment"><span class="-spell">// elements of the array</span></span>
+
+<span class="PreProc">#include</span> <span class="String">&lt;cstdlib&gt;</span>
+<span class="PreProc">#include</span> <span class="String">&lt;iostream&gt;</span>
+
+<span class="-type-builtin">int</span> <span class="-variable"><span class="Function">findSmallestElement</span></span><span class="-punctuation-bracket">(</span><span class="-keyword">const</span> <span class="-type-builtin">int</span> <span class="-variable-parameter"><span class="-variable">numbers</span><span class="-punctuation-bracket">[</span><span class="-punctuation-bracket">]</span></span><span class="-punctuation-bracket">)</span><span class="-punctuation-delimiter">;</span>
+<span class="-type-builtin">int</span> <span class="-variable"><span class="Function">findGreatestElement</span></span><span class="-punctuation-bracket">(</span><span class="-keyword">const</span> <span class="-type-builtin">int</span> <span class="-variable-parameter"><span class="-variable">numbers</span><span class="-punctuation-bracket">[</span><span class="-punctuation-bracket">]</span></span><span class="-punctuation-bracket">)</span><span class="-punctuation-delimiter">;</span>
+
+<span class="-type-builtin">int</span> <span class="-variable"><span class="Function">main</span></span><span class="-punctuation-bracket">(</span><span class="-punctuation-bracket">)</span> <span class="-punctuation-bracket">{</span>
+
+<span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-type-builtin">int</span> <span class="-variable">numbers</span><span class="-punctuation-bracket">[</span><span class="Constant">10</span><span class="-punctuation-bracket">]</span><span class="-punctuation-bracket">{</span><span class="-punctuation-bracket">}</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-type-builtin">int</span> <span class="-variable">smallest</span> <span class="-operator">=</span> <span class="Constant">0</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-type-builtin">int</span> <span class="-variable">greatest</span> <span class="-operator">=</span> <span class="Constant">0</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-variable"><span class="Function">srand</span></span><span class="-punctuation-bracket">(</span><span class="-variable"><span class="Function">time</span></span><span class="-punctuation-bracket">(</span><span class="Constant">0</span><span class="-punctuation-bracket">)</span><span class="-punctuation-bracket">)</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="Statement">for</span> <span class="-punctuation-bracket">(</span><span class="-type-builtin">int</span> <span class="-variable">i</span> <span class="-operator">=</span> <span class="Constant">0</span><span class="-punctuation-delimiter">;</span> <span class="-variable">i</span> <span class="-operator">&lt;</span> <span class="Constant">10</span><span class="-punctuation-delimiter">;</span> <span class="-variable">i</span><span class="-operator">++</span><span class="-punctuation-bracket">)</span> <span class="-punctuation-bracket">{</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-variable">numbers</span><span class="-punctuation-bracket">[</span><span class="-variable">i</span><span class="-punctuation-bracket">]</span> <span class="-operator">=</span> <span class="-variable"><span class="Function">rand</span></span><span class="-punctuation-bracket">(</span><span class="-punctuation-bracket">)</span> <span class="-operator">%</span> <span class="Constant">100</span> <span class="-operator">+</span> <span class="Constant">1</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-punctuation-bracket">}</span>
+<span class="-ibl-indent-char-1">▎</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cout</span> <span class="-operator">&lt;&lt;</span> <span class="String">&quot;List of elements:&quot;</span> <span class="-operator">&lt;&lt;</span> <span class="Character">'<span class="-string-escape">\n</span>'</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="Statement">for</span> <span class="-punctuation-bracket">(</span><span class="-type-builtin">int</span> <span class="-variable">i</span> <span class="-operator">=</span> <span class="Constant">0</span><span class="-punctuation-delimiter">;</span> <span class="-variable">i</span> <span class="-operator">&lt;</span> <span class="Constant">10</span><span class="-punctuation-delimiter">;</span> <span class="-variable">i</span><span class="-operator">++</span><span class="-punctuation-bracket">)</span> <span class="-punctuation-bracket">{</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cout</span> <span class="-operator">&lt;&lt;</span> <span class="-variable">numbers</span><span class="-punctuation-bracket">[</span><span class="-variable">i</span><span class="-punctuation-bracket">]</span> <span class="-operator">&lt;&lt;</span> <span class="Character">' '</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-punctuation-bracket">}</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cout</span> <span class="-operator">&lt;&lt;</span> <span class="Character">'<span class="-string-escape">\n</span>'</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-variable">smallest</span> <span class="-operator">=</span> <span class="-variable"><span class="Function">findSmallestElement</span></span><span class="-punctuation-bracket">(</span><span class="-variable">numbers</span><span class="-punctuation-bracket">)</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cout</span> <span class="-operator">&lt;&lt;</span> <span class="String">&quot;Smallest: &quot;</span> <span class="-operator">&lt;&lt;</span> <span class="-variable">smallest</span> <span class="-operator">&lt;&lt;</span> <span class="Character">'<span class="-string-escape">\n</span>'</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-variable">greatest</span> <span class="-operator">=</span> <span class="-variable"><span class="Function">findGreatestElement</span></span><span class="-punctuation-bracket">(</span><span class="-variable">numbers</span><span class="-punctuation-bracket">)</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="PreProc">std</span><span class="-punctuation-delimiter"><span class="-punctuation-delimiter">::</span></span><span class="-variable">cout</span> <span class="-operator">&lt;&lt;</span> <span class="String">&quot;Greatest: &quot;</span> <span class="-operator">&lt;&lt;</span> <span class="-variable">greatest</span> <span class="-operator">&lt;&lt;</span> <span class="Character">'<span class="-string-escape">\n</span>'</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-keyword">return</span> <span class="Constant">0</span><span class="-punctuation-delimiter">;</span>
+<span class="-punctuation-bracket">}</span>
+
+<span class="Comment"><span class="-spell">// function findSmallestElement finds the smallest element in the array of</span></span>
+<span class="Comment"><span class="-spell">// numbers</span></span>
+<span class="Comment"><span class="-spell">// Input: array of numbers: numbers</span></span>
+<span class="Comment"><span class="-spell">// Output: smallest number in array: returned to main</span></span>
+<span class="-type-builtin">int</span> <span class="-variable"><span class="Function">findSmallestElement</span></span><span class="-punctuation-bracket">(</span><span class="-keyword">const</span> <span class="-type-builtin">int</span> <span class="-variable-parameter"><span class="-variable">numbers</span><span class="-punctuation-bracket">[</span><span class="-punctuation-bracket">]</span></span><span class="-punctuation-bracket">)</span> <span class="-punctuation-bracket">{</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-type-builtin">int</span> <span class="-variable">smallest</span> <span class="-operator">=</span> <span class="-variable">numbers</span><span class="-punctuation-bracket">[</span><span class="Constant">0</span><span class="-punctuation-bracket">]</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="Statement">for</span> <span class="-punctuation-bracket">(</span><span class="-type-builtin">int</span> <span class="-variable">i</span> <span class="-operator">=</span> <span class="Constant">0</span><span class="-punctuation-delimiter">;</span> <span class="-variable">i</span> <span class="-operator">&lt;</span> <span class="Constant">10</span><span class="-punctuation-delimiter">;</span> <span class="-variable">i</span><span class="-operator">++</span><span class="-punctuation-bracket">)</span> <span class="-punctuation-bracket">{</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="Statement">if</span> <span class="-punctuation-bracket">(</span><span class="-variable">numbers</span><span class="-punctuation-bracket">[</span><span class="-variable">i</span><span class="-punctuation-bracket">]</span> <span class="-operator">&lt;</span> <span class="-variable">smallest</span><span class="-punctuation-bracket">)</span> <span class="-punctuation-bracket">{</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-variable">smallest</span> <span class="-operator">=</span> <span class="-variable">numbers</span><span class="-punctuation-bracket">[</span><span class="-variable">i</span><span class="-punctuation-bracket">]</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-punctuation-bracket">}</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-punctuation-bracket">}</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-keyword">return</span> <span class="-variable">smallest</span><span class="-punctuation-delimiter">;</span>
+<span class="-punctuation-bracket">}</span>
+
+<span class="Comment"><span class="-spell">// function findGreatestElement finds the greatest element in the array of</span></span>
+<span class="Comment"><span class="-spell">// numbers</span></span>
+<span class="Comment"><span class="-spell">// Input: array of numbers: numbers</span></span>
+<span class="Comment"><span class="-spell">// Output: greatest number in array: returned to main</span></span>
+<span class="-type-builtin">int</span> <span class="-variable"><span class="Function">findGreatestElement</span></span><span class="-punctuation-bracket">(</span><span class="-keyword">const</span> <span class="-type-builtin">int</span> <span class="-variable-parameter"><span class="-variable">numbers</span><span class="-punctuation-bracket">[</span><span class="-punctuation-bracket">]</span></span><span class="-punctuation-bracket">)</span> <span class="-punctuation-bracket">{</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-type-builtin">int</span> <span class="-variable">greatest</span> <span class="-operator">=</span> <span class="-variable">numbers</span><span class="-punctuation-bracket">[</span><span class="Constant">0</span><span class="-punctuation-bracket">]</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="Statement">for</span> <span class="-punctuation-bracket">(</span><span class="-type-builtin">int</span> <span class="-variable">i</span> <span class="-operator">=</span> <span class="Constant">0</span><span class="-punctuation-delimiter">;</span> <span class="-variable">i</span> <span class="-operator">&lt;</span> <span class="Constant">10</span><span class="-punctuation-delimiter">;</span> <span class="-variable">i</span><span class="-operator">++</span><span class="-punctuation-bracket">)</span> <span class="-punctuation-bracket">{</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="Statement">if</span> <span class="-punctuation-bracket">(</span><span class="-variable">numbers</span><span class="-punctuation-bracket">[</span><span class="-variable">i</span><span class="-punctuation-bracket">]</span> <span class="-operator">&gt;</span> <span class="-variable">greatest</span><span class="-punctuation-bracket">)</span> <span class="-punctuation-bracket">{</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-variable">greatest</span> <span class="-operator">=</span> <span class="-variable">numbers</span><span class="-punctuation-bracket">[</span><span class="-variable">i</span><span class="-punctuation-bracket">]</span><span class="-punctuation-delimiter">;</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-punctuation-bracket">}</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-punctuation-bracket">}</span>
+<span class="-ibl-indent-char-1">▎</span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-ibl-whitespace-char-1"> </span><span class="-keyword">return</span> <span class="-variable">greatest</span><span class="-punctuation-delimiter">;</span>
+<span class="-punctuation-bracket">}</span>
+<span class="Comment"><span class="-spell">// output:</span></span>
+<span class="Comment"><span class="-spell">// List of elements:</span></span>
+<span class="Comment"><span class="-spell">//  42 27 46 72 76 65 91 8 95 67</span></span>
+<span class="Comment"><span class="-spell">//  Smallest: 8</span></span>
+<span class="Comment"><span class="-spell">//  Greatest: 95</span></span>
+
+</pre>
+</body>
+</html>

@@ -16,11 +16,13 @@
 
 int main() {
 
+    // initialize arrays
     int arr1[5] = {};
     int arr2[5] = {};
     int arr3[10] = {};
     srand(time(0));
 
+    // fill arrays
     for (int i = 0; i < 10; i++) {
         arr1[i] = rand() % 100 + 1;
     }
@@ -29,10 +31,13 @@ int main() {
         arr2[i] = rand() % 100 + 1;
     }
 
+    // merge arrays
     for (int i = 0; i < 5; i++) {
         arr3[i * 2] = arr1[i];
         arr3[(i * 2) + 1] = arr2[i];
     }
+
+    // display all 3 arrays
     std::cout << "array 1: " << '\n';
     for (int i = 0; i < 5; i++) {
         std::cout << arr1[i] << ' ';
@@ -50,3 +55,9 @@ int main() {
     std::cout << '\n';
     return 0;
 }
+
+// Output:
+// List of elements:
+// 42 27 46 72 76 65 91 8 95 67
+// Smallest: 8
+// Greatest: 95

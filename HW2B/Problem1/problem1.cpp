@@ -42,8 +42,9 @@ int main() {
 }
 
 // function findSmallestElement finds the smallest element in the array of
-// numbers Input: array of numbers: numbers Output: smallest number in array:
-// returned to main
+// numbers
+// Input: array of numbers: numbers
+// Output: smallest number in array: returned to main
 int findSmallestElement(const int numbers[]) {
     int smallest = numbers[0];
     for (int i = 0; i < 10; i++) {
@@ -55,8 +56,9 @@ int findSmallestElement(const int numbers[]) {
 }
 
 // function findGreatestElement finds the greatest element in the array of
-// numbers Input: array of numbers: numbers Output: greatest number in array:
-// returned to main
+// numbers
+// Input: array of numbers: numbers
+// Output: greatest number in array: returned to main
 int findGreatestElement(const int numbers[]) {
     int greatest = numbers[0];
     for (int i = 0; i < 10; i++) {
@@ -66,3 +68,8 @@ int findGreatestElement(const int numbers[]) {
     }
     return greatest;
 }
+// output:
+// List of elements:
+//  42 27 46 72 76 65 91 8 95 67
+//  Smallest: 8
+//  Greatest: 95
