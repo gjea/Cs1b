@@ -10,10 +10,10 @@ private:
 
 public:
 	Student() {}
-	Student(int id, std::string name, int units) {
+	Student(int id, int units, std::string name) {
 		this->id = id;
-		this->name = name;
 		this->units = units;
+		this->name = name;
 	}
 	~Student();
 	void setID(int newID) {this->id = newID}
